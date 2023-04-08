@@ -14,7 +14,6 @@
                             </div>
                         @endif
 
-                        <a class="btn btn-success" href="{{route('user.create')}}">&plus; Cadastrar RECURSO</a>
 
                         @if($errors)
                             @foreach($errors->all() as $error)
@@ -52,6 +51,11 @@
 
                             </tbody>
                         </table>
+
+                            <div class="d-flex justify-content-end align-items-center">
+                                <a class="btn btn-success" href="{{route('user.create')}}">&plus; Cadastrar RECURSO</a>
+                            </div>
+
                     </div>
                 </div>
             </div>

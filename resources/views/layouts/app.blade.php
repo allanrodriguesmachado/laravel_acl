@@ -55,7 +55,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('user.index') }}">Cadastrar</a>
+                                    <a class="dropdown-item" href="{{ route('user.index') }}">Gestão de usuário</a>
+
+                                    <hr class="m-3">
 
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
