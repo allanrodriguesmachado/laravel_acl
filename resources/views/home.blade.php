@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+<title>{{ config('app.name', 'Home | ACL') }}</title>
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

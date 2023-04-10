@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,4 +28,11 @@ Route::resource('user', UserController::class)->names([
     'destroy' => 'user.destroy',
     'create' => 'user.create',
     'update' => 'user.update'
+]);
+
+Route::resource('role', RoleController::class)->names([
+    'index' => 'role.index',
+    'destroy' => 'role.destroy',
+    'create' => 'role.create',
+    'update' => 'role.update'
 ]);

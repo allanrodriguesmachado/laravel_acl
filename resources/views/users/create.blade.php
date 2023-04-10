@@ -11,13 +11,13 @@
 
                         <a class="text-success" href="{{route('user.index')}}">&leftarrow; Voltar para a listagem</a>
 
-                        @if($errors)
-                            @foreach($errors->all() as $error)
-                                <div class="alert alert-danger mt-4" role="alert">
-                                    {{ $error }}
-                                </div>
-                            @endforeach
-                        @endif
+{{--                        @if($errors)--}}
+{{--                            @foreach($errors->all() as $error)--}}
+{{--                                <div class="alert alert-danger mt-4" role="alert">--}}
+{{--                                    {{ $error }}--}}
+{{--                                </div>--}}
+{{--                            @endforeach--}}
+{{--                        @endif--}}
 
                         <form action="{{route('user.store')}}" method="post" class="mt-4" autocomplete="off">
                             @csrf
