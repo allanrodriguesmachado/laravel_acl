@@ -13,8 +13,8 @@ type HomeProps = {
 }
 
 export default function Home({episodes}: HomeProps) {
-    {episodes.title}
-    return <h1>Index</h1>
+
+    return <h1> {episodes.title}</h1>
 }
 
 export  const  getStaticProps: GetStaticProps = async () => {
