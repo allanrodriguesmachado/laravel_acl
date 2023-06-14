@@ -35,8 +35,6 @@ export default function Home({lastEpisodes, allEpisodes}: HomePropsPodcast) {
             </Head>
 
             <div className={styles.homePage}>
-
-
                 <section className={styles.latestEpisodes}>
                     <h2>últimos lançamentos</h2>
                     <ul>
@@ -51,18 +49,16 @@ export default function Home({lastEpisodes, allEpisodes}: HomePropsPodcast) {
                                         alt={episode.title}
                                     />
 
-                                    <div className={episode.episodesDetails}>
+                                    <div className={styles.episodeDetails}>
                                         <a href="">{episode.title}</a>
                                         <p>{episode.members}</p>
                                         <span>{episode.publishedAt}</span>
                                         <span>{episode.durationAsString}</span>
                                     </div>
 
-
                                     <button type="button">
                                         <img src="/play-green.svg" alt="Tocar episodio"/>
                                     </button>
-
                                 </li>
                             )
                         })}
