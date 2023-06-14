@@ -9,6 +9,8 @@ export default function Document() {
 
                 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap"
                       rel="stylesheet"/>
+
+                <link rel="icon" href="/favicon.png" sizes="any" />
             </Head>
             <body>
             <Main/>
