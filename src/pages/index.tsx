@@ -28,11 +28,7 @@ type HomePropsPodcast = {
 }
 
 export default function Home({lastEpisodes, allEpisodes}: HomePropsPodcast) {
-    console.log(
-        lastEpisodes,
-        allEpisodes
-    )
-    return (
+        return (
         <div className={styles.homePage}>
             <section className={styles.latestEpisodes}>
                 <h2>últimos lançamentos</h2>
@@ -101,9 +97,6 @@ export const getStaticProps: GetStaticProps = async () => {
             url: episode.file.url
         }
     })
-
-    // const lastEpisodes = episodes.slice(0, 2);
-    // const allEpisodes = episodes.slice(2, episodes.length)
 
     return {
         props: {
