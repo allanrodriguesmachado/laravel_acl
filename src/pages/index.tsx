@@ -7,7 +7,10 @@ import {GetStaticProps} from 'next';
 import {Inter} from 'next/font/google';
 import Image from 'next/image';
 
+import Link from 'next/link'
+
 import styles from './home.module.scss';
+import {tr} from "date-fns/locale";
 
 const inter = Inter({subsets: ['latin']});
 
@@ -50,7 +53,10 @@ export default function Home({lastEpisodes, allEpisodes}: HomePropsPodcast) {
                                     />
 
                                     <div className={styles.episodeDetails}>
-                                        <a href="">{episode.title}</a>
+                                        <Link href={`/episodes/${episode.id}`}>
+                                            <a>{episode.title}</a>
+                                        </Link>
+
                                         <p>{episode.members}</p>
                                         <span>{episode.publishedAt}</span>
                                         <span>{episode.durationAsString}</span>
@@ -66,7 +72,49 @@ export default function Home({lastEpisodes, allEpisodes}: HomePropsPodcast) {
                 </section>
 
                 <section className={styles.allEpisodes}>
+                    <h2>Todos os episódios</h2>
+                    <table cellSpacing={0}>
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>Podcast</th>
+                            <th>Integrantes</th>
+                            <th>Data</th>
+                            <th>Duração</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {
+                            allEpisodes.map(episode => {
+                                return (
+                                    <tr key={episode.id}>
+                                        <td style={{width: 72}}>
+                                            <Image  width={120} height={120}
+                                                   src={episode.thumbnail} alt={episode.title} object-fit="cover"/>
+                                        </td>
 
+                                        <td>
+                                            <Link href={`/episodes/${episode.id}`}>
+                                                <a>{episode.title}</a>
+                                            </Link>
+                                        </td>
+
+                                        <td>{episode.members}</td>
+                                        <td style={{width: 100}}>{episode.publishedAt}</td>
+                                        <td>{episode.durationAsString}</td>
+                                        <td>
+                                            <button type="button">
+                                                <img src="/play-green.svg" alt="Tocar"/>
+                                            </button>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                )
+                            })
+                        }
+                        </tbody>
+                    </table>
                 </section>
             </div>
         </>
