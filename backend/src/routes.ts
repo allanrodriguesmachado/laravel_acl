@@ -2,10 +2,10 @@ import {Router, Request, Response} from 'express'
 
 const router = Router();
 
-router.get("/test", (request: Request, response: Response) => {
-    return response.json({
-        name: "Allan Rodrigues"
-    })
-})
+router.get('/test', (req: Request, res: Response) => {
+    return res.json({
+        project: "My Project"
+    });
+});
 
-export {router};
+export {router}
